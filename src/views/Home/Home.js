@@ -19,11 +19,9 @@ export default function Home() {
       
       {/* pass the state variables as props to the presentational components */}
 
-      <Preview title={title} subtitle={subtitle} text={text} />
-      
+      <Preview title={title} subtitle={subtitle} text={text} align={align} font={font} />
+
       <Editor 
-        font={font}
-        align={align}
         setTitle={setTitle} 
         setSubtitle={setSubtitle}
         setFont={setFont}
