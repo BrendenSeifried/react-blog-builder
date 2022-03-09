@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Preview from '../../components/Preview/Preview';
 import Editor from '../../components/Editor/Editor';
@@ -7,12 +7,28 @@ import './Home.css';
 
 export default function Home() {
   // add useState calls here for title, subtitle, font, align, and text
+  const [title, setTitle] = useState('testTitle');
+  const [subtitle, setSubtitle] = useState('testSubtitle');
+  const [font, setFont] = useState('testFont');
+  const [align, setAlign] = useState('alignAlign');
+  const [text, setText] = useState('textText');
 
   return (
     <main>
+      
+      
       {/* pass the state variables as props to the presentational components */}
-      <Preview />
-      <Editor />
+
+      <Preview title={title} subtitle={subtitle} text={text} />
+      
+      <Editor 
+        font={font}
+        align={align}
+        setTitle={setTitle} 
+        setSubtitle={setSubtitle}
+        setFont={setFont}
+        setAlign={setAlign}
+        setText={setText} />
     </main>
   );
 }
